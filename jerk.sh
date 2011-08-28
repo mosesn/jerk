@@ -35,7 +35,11 @@ else
     elif [ "$1" = "abort" ]; then
 	git reset --hard HEAD
     elif [ "$1" = "undo" ]; then
-	git revert HEAD
+	if [ -z "$2" ]; then
+	    git revert HEAD
+	else
+	    git revert HEAD~$2
+	fi
     fi
 fi
 

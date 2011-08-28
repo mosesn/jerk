@@ -10,23 +10,37 @@ Also, to have a command line utility that insults you.  Finally.
 
 ##API
 ###jerk save FILENAME "MESSAGE"
+saves the FILENAME file with message MESSAGE.	
 ###jerk save DIRNAME "MESSAGE"
+saves the DIRNAME directory with message MESSAGE.	
 ###jerk saveall "MESSAGE" 
+saves all files and directories with message MESSAGE
 ###jerk savecur "MESSAGE"
-saves what currently exists
+saves all files and directories that were already in the repo with message MESSAGE
 ###jerk ignore REGEX
+tells jerk to ignore files with REGEX.  Note: HASH must be escaped like so: \HASH
 ###jerk forget FILENAME
+stops remembering and destroys FILENAME
 ###jerk forget DIRNAME
+stops remembering and destroys DIRNAME
 ###jerk undo
+goes back a commit.  NB: doing this twice will undo and redo.
 ###jerk undo INTEGER
+goes back INTEGER commits.
 ###jerk pull
+pulls changes other people have made from the server and pushes your commits on top of all of them.
 ###jerk push
+pushes your changes to master. NB: Your local repo must be up-to-date (ie you must have pulled recently)
 ###jerk diff
+Displays your changes since your last save
 ###jerk log
-###jerk load GITID
+shows you your most recent logs
+###jerk load ID
+loads the state from the id you display. Hint: get the id from running a git log and matching it with the commit message you want.
 ###jerk status
+gets the current status of your repository
 ###jerk abort
+cancels all potential changes to your repository, reverting to your last save.  will not revert a pull.
 
 ##TODO
-Write API more clearly
 Write an installation script that adds it to your path automagically.

@@ -1,0 +1,16 @@
+API
+jerk save FILENAME "MESSAGE"
+jerk save DIRNAME "MESSAGE"
+jerk save all "MESSAGE"
+jerk save
+jerk ignore REGEX
+jerk forget FILENAME
+jerk forget FILENAME
+jerk undo
+jerk undo INTEGER
+jerk pull
+jerk push
+jerk diff
+jerk log
+jerk load GITID
+jerk status

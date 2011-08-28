@@ -10,21 +10,23 @@ else
 	    if [ -z "$3" ]; then
 		echo Got a message for me?
 	    else
-		if [ $2 = "all" ]; then
-		    git add -A
-		else
-		    git add $2
-		fi
+		git add $2
 		git commit -m "$3"
 	    fi
 	    echo Fine whatever.
 	fi
-
-    elif [ "$1" = "saveall" ]; then
+    elif [ "$1" = "savecur" ]; then
 	if [ -z "$2" ]; then
 	    echo Got a message for me?
 	else
 	    git commit -am "$2"
+	fi
+    elif [ "$1" = "saveall" ]; then
+	if [ -z "$2" ]; then
+	    echo Got a message for me?
+	else
+	    git add -A
+	    git commit -m "$2"
 	fi
     elif [ "$1" = "ignore" ]; then
 	if [ -z "$2" ]; then

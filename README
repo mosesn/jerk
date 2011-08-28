@@ -5,7 +5,7 @@ jerk save all "MESSAGE"
 jerk save
 jerk ignore REGEX
 jerk forget FILENAME
-jerk forget DIRNAME
+jerk forget FILENAME
 jerk undo
 jerk undo INTEGER
 jerk pull
@@ -14,4 +14,3 @@ jerk diff
 jerk log
 jerk load GITID
 jerk status
-jerk abort

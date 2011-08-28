@@ -5,10 +5,10 @@ if [ -z "$1" ]; then
 else
     if [ "$1" = "save" ]; then
 	if [ -z "$2" ]; then
-	    echo Got a message for me?
+	    echo "Gonna need a little more than that."
 	else
 	    if [ -z "$3" ]; then
-		git commit -am "$2"
+		echo Got a message for me?
 	    else
 		if [ $2 = "all" ]; then
 		    git add -A
@@ -18,6 +18,13 @@ else
 		git commit -m "$3"
 	    fi
 	    echo Fine whatever.
+	fi
+
+    elif [ "$1" = "saveall" ]; then
+	if [ -z "$2" ]; then
+	    echo Got a message for me?
+	else
+	    git commit -am "$2"
 	fi
     elif [ "$1" = "ignore" ]; then
 	if [ -z "$2" ]; then

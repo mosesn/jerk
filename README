@@ -1,7 +1,12 @@
-API
+#jerk
+
+##Purpose
+I wanted to learn git a little better, as well as try my hand at some shell scripting.  I was also curious about how hard it was to write an api for a command line utility--it can be surprisingly annoying--I think this is endemic to writing any kind of api, however.
+
+##API
 jerk save FILENAME "MESSAGE"
 jerk save DIRNAME "MESSAGE"
-jerk save all "MESSAGE"
+jerk saveall "MESSAGE" 
 jerk save
 jerk ignore REGEX
 jerk forget FILENAME

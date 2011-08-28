@@ -1,23 +1,41 @@
 #!/bin/bash
 
-echo $1
-echo $2
-echo $3
 if [ -z "$1" ]; then
     echo What?
 else
     if [ "$1" = "save" ]; then
 	if [ -z "$2" ]; then
-	    echo Save what?
+	    echo Got a message for me?
 	else
 	    if [ -z "$3" ]; then
-		echo Got a message for me?
+		git commit -am "$2"
 	    else
-		git add $2
+		if [ $2 = "all" ]; then
+		    git add -A
+		else
+		    git add $2
+		fi
 		git commit -m "$3"
-		echo Fine whatever.
 	    fi
+	    echo Fine whatever.
 	fi
+    elif [ "$1" = "ignore" ]; then
+	if [ -z "$2" ]; then
+	    echo Ignore yourself.
+	else
+	    echo $2 >> .gitignore
+	    echo "You know you're a dick, right?"
+	fi
+    elif [ "$1" = "forget" ]; then
+	if [ -z "$2" ]; then
+	    echo "You've forgotten what you wanted to forget? Ha!"
+	else
+	    git rm $2
+	fi
+    elif [ "$1" = "abort" ]; then
+	git reset --hard HEAD
+    elif [ "$1" = "undo" ]; then
+	git revert HEAD
     fi
 fi
 

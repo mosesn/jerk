@@ -1,22 +1,23 @@
 #!/bin/bash
 
-echo $1
-echo $2
-echo $3
 if [ -z "$1" ]; then
     echo What?
 else
     if [ "$1" = "save" ]; then
 	if [ -z "$2" ]; then
-	    echo Save what?
+	    echo Got a message for me?
 	else
 	    if [ -z "$3" ]; then
-		echo Got a message for me?
+		git commit -am "$2"
 	    else
-		git add $2
+		if [ $2 = "all" ]; then
+		    git add -A
+		else
+		    git add $2
+		fi
 		git commit -m "$3"
-		echo Fine whatever.
 	    fi
+	    echo Fine whatever.
 	fi
     elif [ "$1" = "ignore" ]; then
 	if [ -z "$2" ]; then

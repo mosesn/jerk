@@ -30,7 +30,7 @@ else
 	if [ -z "$2" ]; then
 	    echo "You've forgotten what you wanted to forget? Ha!"
 	else
-	    git rm $2
+	    git rm -r $2
 	fi
     elif [ "$1" = "abort" ]; then
 	git reset --hard HEAD

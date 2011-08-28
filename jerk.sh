@@ -20,6 +20,7 @@ else
 	    echo Got a message for me?
 	else
 	    git commit -am "$2"
+	    echo "This again?"
 	fi
     elif [ "$1" = "saveall" ]; then
 	if [ -z "$2" ]; then
@@ -27,6 +28,7 @@ else
 	else
 	    git add -A
 	    git commit -m "$2"
+	    echo "You have no finesse."
 	fi
     elif [ "$1" = "ignore" ]; then
 	if [ -z "$2" ]; then

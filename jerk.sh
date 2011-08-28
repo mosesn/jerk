@@ -36,9 +36,9 @@ else
 	git reset --hard HEAD
     elif [ "$1" = "undo" ]; then
 	if [ -z "$2" ]; then
-	    git revert HEAD
+	    git revert --no-edit HEAD
 	else
-	    git revert HEAD~$2
+	    git revert --no-edit HEAD~$2
 	fi
     fi
 fi

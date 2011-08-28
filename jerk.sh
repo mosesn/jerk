@@ -65,6 +65,9 @@ else
 	    git revert --no-edit HEAD~$2
 	fi
 	echo "Ha! Made a mistake!"
+    elif [ "$1" = "status" ]; then
+	git status
+	echo "You're probably too dumb to understand this."
     fi
 fi
 
